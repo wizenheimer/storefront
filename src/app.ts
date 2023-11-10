@@ -8,6 +8,8 @@ import routes from "./routes";
 const port = config.get<number>("port")
 const app = express()
 
+app.use(express.json());
+
 app.listen(port, async () => {
     logger.info(`server started at: http://localhost:${port}`);
     // connect to db

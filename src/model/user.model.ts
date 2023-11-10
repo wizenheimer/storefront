@@ -2,11 +2,14 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import config from "config";
 
-// interface for User Document
-export interface UserDocument extends mongoose.Document {
+export interface UserInput {
     email: string;
     name: string;
     password: string;
+}
+
+// interface for User Document
+export interface UserDocument extends UserInput, mongoose.Document {
     createdAt: Date;
     updatedAt: Date;
     comparePassword(candidatePassword: string): Promise<boolean>;
