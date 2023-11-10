@@ -3,6 +3,9 @@ build
 ref
 .DS_Store
 
+# environment variables
+.env
+
 # npm
 node_modules
 package-lock.json
