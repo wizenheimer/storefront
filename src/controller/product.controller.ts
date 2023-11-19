@@ -26,7 +26,7 @@ export async function updateProductHandler(req: Request<UpdateProductInput["para
         return res.send(404)
     }
 
-    if (product.user != userId) {
+    if (String(product.user) != userId) {
         return res.send(403)
     }
 
@@ -62,7 +62,7 @@ export async function deleteProductHandler(req: Request<UpdateProductInput["para
         return res.send(404)
     }
 
-    if (product.user != userId) {
+    if (String(product.user) != userId) {
         return res.send(403)
     }
 
